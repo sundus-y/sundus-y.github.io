@@ -1,0 +1,914 @@
+<html>
+<head>
+  <title>Cucumber Steps Stats</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+  <style>
+      nav#top-menu{border-color: #2F2F2F!important;}
+      body{padding-top: 50px;}
+      ul.side-bar{height: 100%;}
+      .tabs-left > div.side-bar {position:fixed; height: 100%;}
+      .tabs-left > div.tab-content {margin-left: 200px;}
+      .tabs-left > div > .nav-tabs > li{float: none;}
+      .tabs-left > div > .nav-tabs > li > a{min-width: 74px;margin-right: 0;margin-bottom: 3px;}
+      .tabs-left > div > .nav-tabs {background-color: #222;float: left;margin-right: 19px;border-right: 1px solid #ddd;}
+      .tabs-left > div > .nav-tabs > li > a {margin-right: -1px;-webkit-border-radius: 4px 0 0 4px;-moz-border-radius: 4px 0 0 4px;border-radius: 4px 0 0 4px;color:#9d9d9d}
+      .tabs-left > div > .nav-tabs > li > a:hover,
+      .tabs-left > div > .nav-tabs > li > a:focus {border-color: #eeeeee #5f635d #eeeeee #eeeeee;}
+      .tabs-left > div > .nav-tabs .active > a,
+      .tabs-left > div > .nav-tabs .active > a:hover,
+      .tabs-left > div > .nav-tabs .active > a:focus {border-color: #ddd transparent #ddd #ddd;*border-right-color: #ffffff;}
+      .tabs-left > div > .tab-pane {float: left;width: 99%;}
+      span.percentage{float: right;}
+      div.details_chart{height: 400px;}
+      div.tps_chart{height: 800px;}
+  </style>
+</head>
+<body>
+<nav id="top-menu" class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">EIACUC - Cucumber Steps Stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#dashboard">Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="tabbable tabs-left">
+  <!-- Nav tabs -->
+  <div class="side-bar">
+    <ul class="nav nav-tabs side-bar" role="tablist">
+      <li role="presentation" class="active"><a href="#all" aria-controls="all" role="tab" data-toggle="tab">All Steps</a></li>
+      <li role="presentation"><a href="#top30time" aria-controls="top30time" role="tab" data-toggle="tab">Top 30% Steps by Time</a></li>
+      <li role="presentation"><a href="#top30count" aria-controls="top30count" role="tab" data-toggle="tab">Top 30% Steps by Count</a></li>
+      <li role="presentation"><a href="#timeperstep" aria-controls="timeperstep" role="tab" data-toggle="tab">Time Spent per Step</a></li>
+    </ul>
+  </div>
+  <!-- Tab panes -->
+  <div class="tab-content table-responsive">
+    <div role="tabpanel" class="tab-pane active" id="all">
+      <table id="all-table" class="data-table table table-hover">
+  <thead>
+  <td>Step</td>
+  <td>Definition</td>
+  <td>Avg</td>
+  <td>SD</td>
+  <td>Max</td>
+  <td>Min</td>
+  <td>Count</td>
+  </thead>
+  
+      <tr data-durations="[[&quot;1&quot;, 49.655214, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:23 \n Time: 49.655214 seconds&quot;], [&quot;2&quot;, 53.667901, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:53 \n Time: 53.667901 seconds&quot;]]">
+        <td>
+          <span>1</span>
+                <span class="percentage">
+                  40%
+                </span>
+        </td>
+        <td title="features/step_definitions/survey_common_steps.rb:79" style="background: -webkit-linear-gradient(left, #DC4141 41%, white 41%);">/^We have started a protocol and are on the "([^\"]*)" section$/</td>
+        <td>51.662</td>
+        <td>2.837</td>
+        <td>53.668</td>
+        <td>49.655</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-1" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 35.345205, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:76 \n Time: 35.345205 seconds&quot;], [&quot;2&quot;, 23.994137, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:77 \n Time: 23.994137 seconds&quot;], [&quot;3&quot;, 24.513724, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:78 \n Time: 24.513724 seconds&quot;]]">
+        <td>
+          <span>2</span>
+                <span class="percentage">
+                  33%
+                </span>
+        </td>
+        <td title="features/step_definitions/search_steps.rb:1" style="background: -webkit-linear-gradient(left, #DC4141 34%, white 34%);">/^there is a protocol "(.*)"( with io as pi)?$/</td>
+        <td>27.951</td>
+        <td>6.409</td>
+        <td>35.345</td>
+        <td>23.994</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-2" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 1.123512, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:17 \n Time: 1.123512 seconds&quot;], [&quot;2&quot;, 0.903969, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:20 \n Time: 0.903969 seconds&quot;], [&quot;3&quot;, 1.201006, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:47 \n Time: 1.201006 seconds&quot;], [&quot;4&quot;, 0.967891, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:50 \n Time: 0.967891 seconds&quot;], [&quot;5&quot;, 14.70532, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:60 \n Time: 14.70532 seconds&quot;], [&quot;6&quot;, 0.936938, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:68 \n Time: 0.936938 seconds&quot;], [&quot;7&quot;, 1.150018, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:85 \n Time: 1.150018 seconds&quot;], [&quot;8&quot;, 0.117984, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:89 \n Time: 0.117984 seconds&quot;], [&quot;9&quot;, 1.141617, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:93 \n Time: 1.141617 seconds&quot;]]">
+        <td>
+          <span>3</span>
+                <span class="percentage">
+                  8%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:42" style="background: -webkit-linear-gradient(left, #DC4141 9%, white 9%);">/^(?:|I )click "([^\"]*)"( index \d*)?(?: within "([^\"]*)")?$/</td>
+        <td>2.472</td>
+        <td>4.599</td>
+        <td>14.705</td>
+        <td>0.118</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-3" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 2.36714, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:12 \n Time: 2.36714 seconds&quot;], [&quot;2&quot;, 3.050014, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:25 \n Time: 3.050014 seconds&quot;], [&quot;3&quot;, 2.014947, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:29 \n Time: 2.014947 seconds&quot;], [&quot;4&quot;, 2.018339, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:34 \n Time: 2.018339 seconds&quot;], [&quot;5&quot;, 3.028745, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:42 \n Time: 3.028745 seconds&quot;], [&quot;6&quot;, 2.038017, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:55 \n Time: 2.038017 seconds&quot;], [&quot;7&quot;, 3.026703, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:81 \n Time: 3.026703 seconds&quot;]]">
+        <td>
+          <span>4</span>
+                <span class="percentage">
+                  6%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:510" style="background: -webkit-linear-gradient(left, #DC4141 7%, white 7%);">/^I wait until all Ajax requests are complete$/</td>
+        <td>2.506</td>
+        <td>0.51</td>
+        <td>3.05</td>
+        <td>2.015</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-4" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 2.364786, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:22 \n Time: 2.364786 seconds&quot;], [&quot;2&quot;, 2.102042, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:52 \n Time: 2.102042 seconds&quot;], [&quot;3&quot;, 2.155393, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:62 \n Time: 2.155393 seconds&quot;], [&quot;4&quot;, 2.094434, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:75 \n Time: 2.094434 seconds&quot;]]">
+        <td>
+          <span>5</span>
+                <span class="percentage">
+                  3%
+                </span>
+        </td>
+        <td title="features/step_definitions/user_rights.rb:34" style="background: -webkit-linear-gradient(left, #DC4141 4%, white 4%);">/^I login as "([^\"]*)"(?: for form_type "([^\"]*)")?$/</td>
+        <td>2.179</td>
+        <td>0.127</td>
+        <td>2.365</td>
+        <td>2.094</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-5" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 5.012612, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 5.012612 seconds&quot;], [&quot;2&quot;, 0.000161, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.000161 seconds&quot;], [&quot;3&quot;, 0.85606, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.85606 seconds&quot;], [&quot;4&quot;, 0.816896, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:63 \n Time: 0.816896 seconds&quot;], [&quot;5&quot;, 0.857316, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.857316 seconds&quot;], [&quot;6&quot;, 0.896384, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:79 \n Time: 0.896384 seconds&quot;]]">
+        <td>
+          <span>6</span>
+                <span class="percentage">
+                  3%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:1" style="background: -webkit-linear-gradient(left, #DC4141 4%, white 4%);">/^I am on Authorizations Manager Page$/</td>
+        <td>1.407</td>
+        <td>1.8</td>
+        <td>5.013</td>
+        <td>0.0</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-6" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.341045, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:11 \n Time: 0.341045 seconds&quot;], [&quot;2&quot;, 0.240614, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:24 \n Time: 0.240614 seconds&quot;], [&quot;3&quot;, 0.125239, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:28 \n Time: 0.125239 seconds&quot;], [&quot;4&quot;, 0.187386, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:33 \n Time: 0.187386 seconds&quot;], [&quot;5&quot;, 0.148916, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:41 \n Time: 0.148916 seconds&quot;], [&quot;6&quot;, 0.370309, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:54 \n Time: 0.370309 seconds&quot;], [&quot;7&quot;, 0.199093, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:80 \n Time: 0.199093 seconds&quot;]]">
+        <td>
+          <span>7</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:153" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^(?:|I )fill in "([^\"]*)"( index \d*)? with "([^\"]*)"(?: within "([^\"]*)")?$/</td>
+        <td>0.23</td>
+        <td>0.093</td>
+        <td>0.37</td>
+        <td>0.125</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-7" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.171582, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:18 \n Time: 0.171582 seconds&quot;], [&quot;2&quot;, 0.213907, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:21 \n Time: 0.213907 seconds&quot;], [&quot;3&quot;, 0.278253, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:48 \n Time: 0.278253 seconds&quot;], [&quot;4&quot;, 0.16785, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:51 \n Time: 0.16785 seconds&quot;], [&quot;5&quot;, 0.174743, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:66 \n Time: 0.174743 seconds&quot;], [&quot;6&quot;, 0.177194, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:69 \n Time: 0.177194 seconds&quot;], [&quot;7&quot;, 0.351767, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:86 \n Time: 0.351767 seconds&quot;]]">
+        <td>
+          <span>8</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:128" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I should see "(.*?)"(?: within "([^\"]*)")?$/</td>
+        <td>0.219</td>
+        <td>0.07</td>
+        <td>0.352</td>
+        <td>0.168</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-8" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.232836, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:90 \n Time: 0.232836 seconds&quot;], [&quot;2&quot;, 0.176194, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:91 \n Time: 0.176194 seconds&quot;], [&quot;3&quot;, 0.14902, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:92 \n Time: 0.14902 seconds&quot;], [&quot;4&quot;, 0.368851, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:95 \n Time: 0.368851 seconds&quot;], [&quot;5&quot;, 0.176016, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:96 \n Time: 0.176016 seconds&quot;], [&quot;6&quot;, 0.156658, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:97 \n Time: 0.156658 seconds&quot;]]">
+        <td>
+          <span>9</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:35" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^for protocol number "(.*?)" the access level should be "(.*?)" for "(.*?)" user login$/</td>
+        <td>0.21</td>
+        <td>0.083</td>
+        <td>0.369</td>
+        <td>0.149</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-9" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 1.004652, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:88 \n Time: 1.004652 seconds&quot;]]">
+        <td>
+          <span>10</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:525" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I wait (?:|for )(\d+) seconds?$/</td>
+        <td>1.005</td>
+        <td>0.0</td>
+        <td>1.005</td>
+        <td>1.005</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-10" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.535298, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:65 \n Time: 0.535298 seconds&quot;], [&quot;2&quot;, 0.346445, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:94 \n Time: 0.346445 seconds&quot;]]">
+        <td>
+          <span>11</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/wait_steps.rb:8" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I wait for text "(.*)"$/</td>
+        <td>0.441</td>
+        <td>0.134</td>
+        <td>0.535</td>
+        <td>0.346</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-11" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.78353, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:61 \n Time: 0.78353 seconds&quot;]]">
+        <td>
+          <span>12</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:82" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I update authorizations for the newest protocol on "(.*?)" section$/</td>
+        <td>0.784</td>
+        <td>0.0</td>
+        <td>0.784</td>
+        <td>0.784</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-12" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.451534, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:71 \n Time: 0.451534 seconds&quot;]]">
+        <td>
+          <span>13</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:143" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I should not see "(.*?)"?(?: within "([^\"]*)")?$/</td>
+        <td>0.452</td>
+        <td>0.0</td>
+        <td>0.452</td>
+        <td>0.452</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-13" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.092451, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:16 \n Time: 0.092451 seconds&quot;], [&quot;2&quot;, 0.084799, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:46 \n Time: 0.084799 seconds&quot;], [&quot;3&quot;, 0.101746, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:58 \n Time: 0.101746 seconds&quot;], [&quot;4&quot;, 0.083887, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:84 \n Time: 0.083887 seconds&quot;]]">
+        <td>
+          <span>14</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/autocomplete_steps.rb:11" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I click on the "([^"]*)" autocomplete option$/</td>
+        <td>0.091</td>
+        <td>0.008</td>
+        <td>0.102</td>
+        <td>0.084</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-14" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.105401, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:64 \n Time: 0.105401 seconds&quot;], [&quot;2&quot;, 0.159556, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:70 \n Time: 0.159556 seconds&quot;]]">
+        <td>
+          <span>15</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:14" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I click authorization name "(.*?)"$/</td>
+        <td>0.132</td>
+        <td>0.038</td>
+        <td>0.16</td>
+        <td>0.105</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-15" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.104968, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:19 \n Time: 0.104968 seconds&quot;], [&quot;2&quot;, 0.11396, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:49 \n Time: 0.11396 seconds&quot;]]">
+        <td>
+          <span>16</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:48" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I check Allow user to start new or copy for "(.*?)" login$/</td>
+        <td>0.109</td>
+        <td>0.006</td>
+        <td>0.114</td>
+        <td>0.105</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-16" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.214519, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:87 \n Time: 0.214519 seconds&quot;]]">
+        <td>
+          <span>17</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:30" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I select "(.*?)" from default access level for "(.*?)" user login$/</td>
+        <td>0.215</td>
+        <td>0.0</td>
+        <td>0.215</td>
+        <td>0.215</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-17" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.177824, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:98 \n Time: 0.177824 seconds&quot;]]">
+        <td>
+          <span>18</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:18" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I expect default access level to be "(.*?)" for "(.*?)" user login$/</td>
+        <td>0.178</td>
+        <td>0.0</td>
+        <td>0.178</td>
+        <td>0.178</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-18" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.013404, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:13 \n Time: 0.013404 seconds&quot;], [&quot;2&quot;, 0.015268, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:26 \n Time: 0.015268 seconds&quot;], [&quot;3&quot;, 0.026191, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:30 \n Time: 0.026191 seconds&quot;], [&quot;4&quot;, 0.016248, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:35 \n Time: 0.016248 seconds&quot;], [&quot;5&quot;, 0.012656, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:43 \n Time: 0.012656 seconds&quot;], [&quot;6&quot;, 0.017459, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:56 \n Time: 0.017459 seconds&quot;], [&quot;7&quot;, 0.01291, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:82 \n Time: 0.01291 seconds&quot;]]">
+        <td>
+          <span>19</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/autocomplete_steps.rb:3" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I should see the following autocomplete options:$/</td>
+        <td>0.016</td>
+        <td>0.005</td>
+        <td>0.026</td>
+        <td>0.013</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-19" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.104972, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:67 \n Time: 0.104972 seconds&quot;]]">
+        <td>
+          <span>20</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:54" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I uncheck Allow user to start new or copy for "(.*?)" login$/</td>
+        <td>0.105</td>
+        <td>0.0</td>
+        <td>0.105</td>
+        <td>0.105</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-20" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.070799, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:59 \n Time: 0.070799 seconds&quot;]]">
+        <td>
+          <span>21</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:339" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^the "([^\"]*)" field(?: within "([^\"]*)")? should contain "([^\"]*)"$/</td>
+        <td>0.071</td>
+        <td>0.0</td>
+        <td>0.071</td>
+        <td>0.071</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-21" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+</table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="top30time">
+      
+      <table id="all-table" class="data-table table table-hover">
+  <thead>
+  <td>Step</td>
+  <td>Definition</td>
+  <td>Avg</td>
+  <td>SD</td>
+  <td>Max</td>
+  <td>Min</td>
+  <td>Count</td>
+  </thead>
+  
+      <tr data-durations="[[&quot;1&quot;, 49.655214, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:23 \n Time: 49.655214 seconds&quot;], [&quot;2&quot;, 53.667901, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:53 \n Time: 53.667901 seconds&quot;]]">
+        <td>
+          <span>1</span>
+                <span class="percentage">
+                  40%
+                </span>
+        </td>
+        <td title="features/step_definitions/survey_common_steps.rb:79" style="background: -webkit-linear-gradient(left, #DC4141 41%, white 41%);">/^We have started a protocol and are on the "([^\"]*)" section$/</td>
+        <td>51.662</td>
+        <td>2.837</td>
+        <td>53.668</td>
+        <td>49.655</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-1" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 35.345205, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:76 \n Time: 35.345205 seconds&quot;], [&quot;2&quot;, 23.994137, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:77 \n Time: 23.994137 seconds&quot;], [&quot;3&quot;, 24.513724, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:78 \n Time: 24.513724 seconds&quot;]]">
+        <td>
+          <span>2</span>
+                <span class="percentage">
+                  33%
+                </span>
+        </td>
+        <td title="features/step_definitions/search_steps.rb:1" style="background: -webkit-linear-gradient(left, #DC4141 34%, white 34%);">/^there is a protocol "(.*)"( with io as pi)?$/</td>
+        <td>27.951</td>
+        <td>6.409</td>
+        <td>35.345</td>
+        <td>23.994</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-2" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 2.36714, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:12 \n Time: 2.36714 seconds&quot;], [&quot;2&quot;, 3.050014, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:25 \n Time: 3.050014 seconds&quot;], [&quot;3&quot;, 2.014947, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:29 \n Time: 2.014947 seconds&quot;], [&quot;4&quot;, 2.018339, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:34 \n Time: 2.018339 seconds&quot;], [&quot;5&quot;, 3.028745, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:42 \n Time: 3.028745 seconds&quot;], [&quot;6&quot;, 2.038017, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:55 \n Time: 2.038017 seconds&quot;], [&quot;7&quot;, 3.026703, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:81 \n Time: 3.026703 seconds&quot;]]">
+        <td>
+          <span>3</span>
+                <span class="percentage">
+                  6%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:510" style="background: -webkit-linear-gradient(left, #DC4141 7%, white 7%);">/^I wait until all Ajax requests are complete$/</td>
+        <td>2.506</td>
+        <td>0.51</td>
+        <td>3.05</td>
+        <td>2.015</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-3" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 1.123512, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:17 \n Time: 1.123512 seconds&quot;], [&quot;2&quot;, 0.903969, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:20 \n Time: 0.903969 seconds&quot;], [&quot;3&quot;, 1.201006, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:47 \n Time: 1.201006 seconds&quot;], [&quot;4&quot;, 0.967891, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:50 \n Time: 0.967891 seconds&quot;], [&quot;5&quot;, 14.70532, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:60 \n Time: 14.70532 seconds&quot;], [&quot;6&quot;, 0.936938, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:68 \n Time: 0.936938 seconds&quot;], [&quot;7&quot;, 1.150018, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:85 \n Time: 1.150018 seconds&quot;], [&quot;8&quot;, 0.117984, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:89 \n Time: 0.117984 seconds&quot;], [&quot;9&quot;, 1.141617, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:93 \n Time: 1.141617 seconds&quot;]]">
+        <td>
+          <span>4</span>
+                <span class="percentage">
+                  8%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:42" style="background: -webkit-linear-gradient(left, #DC4141 9%, white 9%);">/^(?:|I )click "([^\"]*)"( index \d*)?(?: within "([^\"]*)")?$/</td>
+        <td>2.472</td>
+        <td>4.599</td>
+        <td>14.705</td>
+        <td>0.118</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-4" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 2.364786, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:22 \n Time: 2.364786 seconds&quot;], [&quot;2&quot;, 2.102042, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:52 \n Time: 2.102042 seconds&quot;], [&quot;3&quot;, 2.155393, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:62 \n Time: 2.155393 seconds&quot;], [&quot;4&quot;, 2.094434, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:75 \n Time: 2.094434 seconds&quot;]]">
+        <td>
+          <span>5</span>
+                <span class="percentage">
+                  3%
+                </span>
+        </td>
+        <td title="features/step_definitions/user_rights.rb:34" style="background: -webkit-linear-gradient(left, #DC4141 4%, white 4%);">/^I login as "([^\"]*)"(?: for form_type "([^\"]*)")?$/</td>
+        <td>2.179</td>
+        <td>0.127</td>
+        <td>2.365</td>
+        <td>2.094</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-5" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 5.012612, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 5.012612 seconds&quot;], [&quot;2&quot;, 0.000161, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.000161 seconds&quot;], [&quot;3&quot;, 0.85606, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.85606 seconds&quot;], [&quot;4&quot;, 0.816896, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:63 \n Time: 0.816896 seconds&quot;], [&quot;5&quot;, 0.857316, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.857316 seconds&quot;], [&quot;6&quot;, 0.896384, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:79 \n Time: 0.896384 seconds&quot;]]">
+        <td>
+          <span>6</span>
+                <span class="percentage">
+                  3%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:1" style="background: -webkit-linear-gradient(left, #DC4141 4%, white 4%);">/^I am on Authorizations Manager Page$/</td>
+        <td>1.407</td>
+        <td>1.8</td>
+        <td>5.013</td>
+        <td>0.0</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-6" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 1.004652, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:88 \n Time: 1.004652 seconds&quot;]]">
+        <td>
+          <span>7</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:525" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I wait (?:|for )(\d+) seconds?$/</td>
+        <td>1.005</td>
+        <td>0.0</td>
+        <td>1.005</td>
+        <td>1.005</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-7" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.78353, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:61 \n Time: 0.78353 seconds&quot;]]">
+        <td>
+          <span>8</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:82" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I update authorizations for the newest protocol on "(.*?)" section$/</td>
+        <td>0.784</td>
+        <td>0.0</td>
+        <td>0.784</td>
+        <td>0.784</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-8" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+</table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="top30count">
+      
+      <table id="all-table" class="data-table table table-hover">
+  <thead>
+  <td>Step</td>
+  <td>Definition</td>
+  <td>Avg</td>
+  <td>SD</td>
+  <td>Max</td>
+  <td>Min</td>
+  <td>Count</td>
+  </thead>
+  
+      <tr data-durations="[[&quot;1&quot;, 1.123512, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:17 \n Time: 1.123512 seconds&quot;], [&quot;2&quot;, 0.903969, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:20 \n Time: 0.903969 seconds&quot;], [&quot;3&quot;, 1.201006, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:47 \n Time: 1.201006 seconds&quot;], [&quot;4&quot;, 0.967891, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:50 \n Time: 0.967891 seconds&quot;], [&quot;5&quot;, 14.70532, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:60 \n Time: 14.70532 seconds&quot;], [&quot;6&quot;, 0.936938, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:68 \n Time: 0.936938 seconds&quot;], [&quot;7&quot;, 1.150018, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:85 \n Time: 1.150018 seconds&quot;], [&quot;8&quot;, 0.117984, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:89 \n Time: 0.117984 seconds&quot;], [&quot;9&quot;, 1.141617, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:93 \n Time: 1.141617 seconds&quot;]]">
+        <td>
+          <span>1</span>
+                <span class="percentage">
+                  8%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:42" style="background: -webkit-linear-gradient(left, #DC4141 9%, white 9%);">/^(?:|I )click "([^\"]*)"( index \d*)?(?: within "([^\"]*)")?$/</td>
+        <td>2.472</td>
+        <td>4.599</td>
+        <td>14.705</td>
+        <td>0.118</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-1" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 2.36714, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:12 \n Time: 2.36714 seconds&quot;], [&quot;2&quot;, 3.050014, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:25 \n Time: 3.050014 seconds&quot;], [&quot;3&quot;, 2.014947, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:29 \n Time: 2.014947 seconds&quot;], [&quot;4&quot;, 2.018339, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:34 \n Time: 2.018339 seconds&quot;], [&quot;5&quot;, 3.028745, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:42 \n Time: 3.028745 seconds&quot;], [&quot;6&quot;, 2.038017, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:55 \n Time: 2.038017 seconds&quot;], [&quot;7&quot;, 3.026703, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:81 \n Time: 3.026703 seconds&quot;]]">
+        <td>
+          <span>2</span>
+                <span class="percentage">
+                  6%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:510" style="background: -webkit-linear-gradient(left, #DC4141 7%, white 7%);">/^I wait until all Ajax requests are complete$/</td>
+        <td>2.506</td>
+        <td>0.51</td>
+        <td>3.05</td>
+        <td>2.015</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-2" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.341045, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:11 \n Time: 0.341045 seconds&quot;], [&quot;2&quot;, 0.240614, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:24 \n Time: 0.240614 seconds&quot;], [&quot;3&quot;, 0.125239, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:28 \n Time: 0.125239 seconds&quot;], [&quot;4&quot;, 0.187386, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:33 \n Time: 0.187386 seconds&quot;], [&quot;5&quot;, 0.148916, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:41 \n Time: 0.148916 seconds&quot;], [&quot;6&quot;, 0.370309, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:54 \n Time: 0.370309 seconds&quot;], [&quot;7&quot;, 0.199093, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:80 \n Time: 0.199093 seconds&quot;]]">
+        <td>
+          <span>3</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:153" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^(?:|I )fill in "([^\"]*)"( index \d*)? with "([^\"]*)"(?: within "([^\"]*)")?$/</td>
+        <td>0.23</td>
+        <td>0.093</td>
+        <td>0.37</td>
+        <td>0.125</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-3" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.013404, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:13 \n Time: 0.013404 seconds&quot;], [&quot;2&quot;, 0.015268, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:26 \n Time: 0.015268 seconds&quot;], [&quot;3&quot;, 0.026191, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:30 \n Time: 0.026191 seconds&quot;], [&quot;4&quot;, 0.016248, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:35 \n Time: 0.016248 seconds&quot;], [&quot;5&quot;, 0.012656, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:43 \n Time: 0.012656 seconds&quot;], [&quot;6&quot;, 0.017459, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:56 \n Time: 0.017459 seconds&quot;], [&quot;7&quot;, 0.01291, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:82 \n Time: 0.01291 seconds&quot;]]">
+        <td>
+          <span>4</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/autocomplete_steps.rb:3" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I should see the following autocomplete options:$/</td>
+        <td>0.016</td>
+        <td>0.005</td>
+        <td>0.026</td>
+        <td>0.013</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-4" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.171582, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:18 \n Time: 0.171582 seconds&quot;], [&quot;2&quot;, 0.213907, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:21 \n Time: 0.213907 seconds&quot;], [&quot;3&quot;, 0.278253, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:48 \n Time: 0.278253 seconds&quot;], [&quot;4&quot;, 0.16785, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:51 \n Time: 0.16785 seconds&quot;], [&quot;5&quot;, 0.174743, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:66 \n Time: 0.174743 seconds&quot;], [&quot;6&quot;, 0.177194, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:69 \n Time: 0.177194 seconds&quot;], [&quot;7&quot;, 0.351767, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:86 \n Time: 0.351767 seconds&quot;]]">
+        <td>
+          <span>5</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/capybara_steps.rb:128" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I should see "(.*?)"(?: within "([^\"]*)")?$/</td>
+        <td>0.219</td>
+        <td>0.07</td>
+        <td>0.352</td>
+        <td>0.168</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-5" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.232836, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:90 \n Time: 0.232836 seconds&quot;], [&quot;2&quot;, 0.176194, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:91 \n Time: 0.176194 seconds&quot;], [&quot;3&quot;, 0.14902, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:92 \n Time: 0.14902 seconds&quot;], [&quot;4&quot;, 0.368851, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:95 \n Time: 0.368851 seconds&quot;], [&quot;5&quot;, 0.176016, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:96 \n Time: 0.176016 seconds&quot;], [&quot;6&quot;, 0.156658, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:97 \n Time: 0.156658 seconds&quot;]]">
+        <td>
+          <span>6</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:35" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^for protocol number "(.*?)" the access level should be "(.*?)" for "(.*?)" user login$/</td>
+        <td>0.21</td>
+        <td>0.083</td>
+        <td>0.369</td>
+        <td>0.149</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-6" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 5.012612, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 5.012612 seconds&quot;], [&quot;2&quot;, 0.000161, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.000161 seconds&quot;], [&quot;3&quot;, 0.85606, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.85606 seconds&quot;], [&quot;4&quot;, 0.816896, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:63 \n Time: 0.816896 seconds&quot;], [&quot;5&quot;, 0.857316, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:6 \n Time: 0.857316 seconds&quot;], [&quot;6&quot;, 0.896384, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:79 \n Time: 0.896384 seconds&quot;]]">
+        <td>
+          <span>7</span>
+                <span class="percentage">
+                  3%
+                </span>
+        </td>
+        <td title="features/step_definitions/admin_authorization_steps.rb:1" style="background: -webkit-linear-gradient(left, #DC4141 4%, white 4%);">/^I am on Authorizations Manager Page$/</td>
+        <td>1.407</td>
+        <td>1.8</td>
+        <td>5.013</td>
+        <td>0.0</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-7" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+      <tr data-durations="[[&quot;1&quot;, 0.092451, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:16 \n Time: 0.092451 seconds&quot;], [&quot;2&quot;, 0.084799, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:46 \n Time: 0.084799 seconds&quot;], [&quot;3&quot;, 0.101746, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:58 \n Time: 0.101746 seconds&quot;], [&quot;4&quot;, 0.083887, &quot;green&quot;, &quot;Location: features/admin_authorizations.feature:84 \n Time: 0.083887 seconds&quot;]]">
+        <td>
+          <span>8</span>
+                <span class="percentage">
+                  0%
+                </span>
+        </td>
+        <td title="features/step_definitions/autocomplete_steps.rb:11" style="background: -webkit-linear-gradient(left, #DC4141 1%, white 1%);">/^I click on the "([^"]*)" autocomplete option$/</td>
+        <td>0.091</td>
+        <td>0.008</td>
+        <td>0.102</td>
+        <td>0.084</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td colspan="7">
+          <div id="chart-8" class="details_chart">Details</div>
+        </td>
+      </tr>
+  
+</table>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="timeperstep">
+      <span data-results="[[&quot;/^I am on Authorizations Manager Page$/&quot;, 8.439429, &quot;features/step_definitions/admin_authorization_steps.rb:1&quot;], [&quot;/^(?:|I )fill in \&quot;([^\\\&quot;]*)\&quot;( index \\d*)? with \&quot;([^\\\&quot;]*)\&quot;(?: within \&quot;([^\\\&quot;]*)\&quot;)?$/&quot;, 1.6126019999999999, &quot;features/step_definitions/capybara_steps.rb:153&quot;], [&quot;/^I wait until all Ajax requests are complete$/&quot;, 17.543905000000002, &quot;features/step_definitions/capybara_steps.rb:510&quot;], [&quot;/^I should see the following autocomplete options:$/&quot;, 0.114136, &quot;features/step_definitions/autocomplete_steps.rb:3&quot;], [&quot;/^I click on the \&quot;([^\&quot;]*)\&quot; autocomplete option$/&quot;, 0.362883, &quot;features/step_definitions/autocomplete_steps.rb:11&quot;], [&quot;/^(?:|I )click \&quot;([^\\\&quot;]*)\&quot;( index \\d*)?(?: within \&quot;([^\\\&quot;]*)\&quot;)?$/&quot;, 22.248255, &quot;features/step_definitions/capybara_steps.rb:42&quot;], [&quot;/^I should see \&quot;(.*?)\&quot;(?: within \&quot;([^\\\&quot;]*)\&quot;)?$/&quot;, 1.5352960000000002, &quot;features/step_definitions/capybara_steps.rb:128&quot;], [&quot;/^I check Allow user to start new or copy for \&quot;(.*?)\&quot; login$/&quot;, 0.218928, &quot;features/step_definitions/admin_authorization_steps.rb:48&quot;], [&quot;/^I login as \&quot;([^\\\&quot;]*)\&quot;(?: for form_type \&quot;([^\\\&quot;]*)\&quot;)?$/&quot;, 8.716655, &quot;features/step_definitions/user_rights.rb:34&quot;], [&quot;/^We have started a protocol and are on the \&quot;([^\\\&quot;]*)\&quot; section$/&quot;, 103.323115, &quot;features/step_definitions/survey_common_steps.rb:79&quot;], [&quot;/^the \&quot;([^\\\&quot;]*)\&quot; field(?: within \&quot;([^\\\&quot;]*)\&quot;)? should contain \&quot;([^\\\&quot;]*)\&quot;$/&quot;, 0.070799, &quot;features/step_definitions/capybara_steps.rb:339&quot;], [&quot;/^I update authorizations for the newest protocol on \&quot;(.*?)\&quot; section$/&quot;, 0.78353, &quot;features/step_definitions/admin_authorization_steps.rb:82&quot;], [&quot;/^I click authorization name \&quot;(.*?)\&quot;$/&quot;, 0.264957, &quot;features/step_definitions/admin_authorization_steps.rb:14&quot;], [&quot;/^I wait for text \&quot;(.*)\&quot;$/&quot;, 0.881743, &quot;features/step_definitions/wait_steps.rb:8&quot;], [&quot;/^I uncheck Allow user to start new or copy for \&quot;(.*?)\&quot; login$/&quot;, 0.104972, &quot;features/step_definitions/admin_authorization_steps.rb:54&quot;], [&quot;/^I should not see \&quot;(.*?)\&quot;?(?: within \&quot;([^\\\&quot;]*)\&quot;)?$/&quot;, 0.451534, &quot;features/step_definitions/capybara_steps.rb:143&quot;], [&quot;/^there is a protocol \&quot;(.*)\&quot;( with io as pi)?$/&quot;, 83.853066, &quot;features/step_definitions/search_steps.rb:1&quot;], [&quot;/^I select \&quot;(.*?)\&quot; from default access level for \&quot;(.*?)\&quot; user login$/&quot;, 0.214519, &quot;features/step_definitions/admin_authorization_steps.rb:30&quot;], [&quot;/^I wait (?:|for )(\\d+) seconds?$/&quot;, 1.004652, &quot;features/step_definitions/capybara_steps.rb:525&quot;], [&quot;/^for protocol number \&quot;(.*?)\&quot; the access level should be \&quot;(.*?)\&quot; for \&quot;(.*?)\&quot; user login$/&quot;, 1.259575, &quot;features/step_definitions/admin_authorization_steps.rb:35&quot;], [&quot;/^I expect default access level to be \&quot;(.*?)\&quot; for \&quot;(.*?)\&quot; user login$/&quot;, 0.177824, &quot;features/step_definitions/admin_authorization_steps.rb:18&quot;]]"></span>
+      <div class="tps_chart"></div>
+    </div>
+  </div>
+</div>
+<script>
+    $(document).ready(function(){
+        $.each($(".data-table"),function(i,table){$(table).find("tr:odd").addClass("master");});
+        $.each($(".data-table"),function(i,table){
+            $(table).find("tr:not(.master)").hide();
+            $(table).find("tr:first-child").show();
+            $(table).find("tr.master").click(function(){
+                var chart_data = eval($(this).data("durations"));
+                $(this).next("tr").toggle();
+                drawDetailsChart(this, chart_data);
+            });
+        });
+        $("a[href='#timeperstep']").click(function(){
+            drawTimePerStepChart();
+        });
+    });
+    function drawDetailsChart(elem,raw_data) {
+        var dataTable= new google.visualization.DataTable();
+        dataTable.addColumn('string', 'Count');
+        dataTable.addColumn('number', 'Duration in Seconds');
+        dataTable.addColumn({type: 'string', role: 'style' });
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+
+        dataTable.addRows(raw_data);
+
+        var options = {
+            title: 'Timming of all the calls for the above step.',
+            vAxis: {viewWindow: {min:0} },
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.ColumnChart($(elem).next().find('.details_chart')[0]);
+        chart.draw(dataTable, options);
+    }
+    function drawTimePerStepChart() {
+        var chart_data = eval($('div#timeperstep').find('span').data("results"));
+
+        var dataTable= new google.visualization.DataTable();
+        dataTable.addColumn('string', 'Name');
+        dataTable.addColumn('number', 'Duration in Seconds');
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+
+        dataTable.addRows(chart_data);
+
+        var options = {
+            title: 'Which Step took most of the time ?',
+            is3D: true
+        };
+
+        var chart = new google.visualization.PieChart($('div#timeperstep').find('.tps_chart')[0]);
+        setTimeout(function(){
+            chart.draw(dataTable, options);
+        },1);
+
+    }
+</script>
+</body>
+</html>
