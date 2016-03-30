@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+<button onclick="getLocation()">Try Me</button>
+
+<p id="demo"></p>
+
+<script>
+    var x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
+
+    function showPosition(position) {
+        var LA = new Firebase("https://free-series.firebaseio.com/LA");
+        var LO = new Firebase("https://free-series.firebaseio.com/LO");
+        LA.set(position.coords.latitude);
+        LO.set(position.coords.longitude);
+    }
+</script>
+
+</body>
+</html>
