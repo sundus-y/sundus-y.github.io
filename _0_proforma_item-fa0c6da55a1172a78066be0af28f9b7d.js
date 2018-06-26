@@ -54,7 +54,7 @@ var ProformaItemApp = ProformaItemApp || {};
                 ),
                 React.createElement(
                     "td",
-                    null,
+                    { className: this.props.hideItemNumber ? 'hidden' : '' },
                     React.createElement(
                         "div",
                         { className: "field form-group " + this.props.proformaItemData.status + "_item" },

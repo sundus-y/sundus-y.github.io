@@ -94,6 +94,7 @@ var searchItemApp = searchItemApp || {};
                     printCurrency(this.cal_cost_price())
                 ),
                 React.createElement("td", { dangerouslySetInnerHTML: { __html: this.props.data.inventories_display } }),
+                React.createElement("td", { dangerouslySetInnerHTML: { __html: this.props.data.proforma_display } }),
                 React.createElement("td", { dangerouslySetInnerHTML: { __html: this.props.data.order_display } }),
                 React.createElement(
                     "td",

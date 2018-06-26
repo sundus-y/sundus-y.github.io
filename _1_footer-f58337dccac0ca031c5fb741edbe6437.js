@@ -3,31 +3,31 @@ var ProformaItemApp = ProformaItemApp || {};
 (function () {
 
     ProformaItemApp.ProformaItemFooter = React.createClass({
-        displayName: "ProformaItemFooter",
+        displayName: 'ProformaItemFooter',
 
         render: function () {
             return React.createElement(
-                "tr",
+                'tr',
                 null,
                 React.createElement(
-                    "td",
-                    { className: "total", colSpan: "5" },
+                    'td',
+                    { className: 'total', colSpan: this.props.hideItemNumber ? '5' : '6' },
                     React.createElement(
-                        "span",
+                        'span',
                         null,
                         React.createElement(
-                            "b",
+                            'b',
                             null,
                             this.props.label,
-                            ":"
+                            ':'
                         )
                     )
                 ),
                 React.createElement(
-                    "td",
-                    { className: "total", colSpan: "2" },
+                    'td',
+                    { className: 'total' },
                     React.createElement(
-                        "strong",
+                        'strong',
                         null,
                         printCurrency(this.props.value)
                     )

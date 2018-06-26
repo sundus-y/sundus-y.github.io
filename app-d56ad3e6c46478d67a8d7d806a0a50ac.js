@@ -181,7 +181,8 @@ var ProformaItemApp = ProformaItemApp || {};
                     proformaItemData: proformaItem,
                     onItemUpdate: this.handleProformaItemUpdate,
                     onProformaItemRemove: this.handleProformaItemRemove,
-                    viewOnly: this.props.viewOnly
+                    viewOnly: this.props.viewOnly,
+                    hideItemNumber: this.props.hideItemNumber
                 });
             }, this);
 
@@ -190,7 +191,7 @@ var ProformaItemApp = ProformaItemApp || {};
                 null,
                 React.createElement(
                     'td',
-                    { colSpan: '5', className: 'center-aligned' },
+                    { colSpan: this.props.hideItemNumber ? '5' : '6', className: 'center-aligned' },
                     React.createElement('i', { className: 'fa fa-spinner fa-spin fa-3x fa-fw', 'aria-hidden': 'true' }),
                     React.createElement(
                         'span',
@@ -245,7 +246,7 @@ var ProformaItemApp = ProformaItemApp || {};
                         ),
                         React.createElement(
                             'td',
-                            null,
+                            { className: this.props.hideItemNumber ? 'hidden' : '' },
                             React.createElement(
                                 'div',
                                 { className: 'field form-group' },
@@ -303,9 +304,9 @@ var ProformaItemApp = ProformaItemApp || {};
                     'tbody',
                     null,
                     this.state.loadingProformaItems ? loadingItems : proformaItems,
-                    React.createElement(ProformaItemFooter, { label: 'Total', value: totalPrice }),
-                    React.createElement(ProformaItemFooter, { label: 'VAT(15%)', value: totalPrice * this.state.config.vat_rate }),
-                    React.createElement(ProformaItemFooter, { label: 'Total With VAT', value: totalPrice * (1 + this.state.config.vat_rate) })
+                    React.createElement(ProformaItemFooter, { label: 'Total', value: totalPrice, hideItemNumber: this.props.hideItemNumber }),
+                    React.createElement(ProformaItemFooter, { label: 'VAT(15%)', value: totalPrice * this.state.config.vat_rate, hideItemNumber: this.props.hideItemNumber }),
+                    React.createElement(ProformaItemFooter, { label: 'Total With VAT', value: totalPrice * (1 + this.state.config.vat_rate), hideItemNumber: this.props.hideItemNumber })
                 )
             );
 
@@ -318,16 +319,15 @@ var ProformaItemApp = ProformaItemApp || {};
         }
     });
 
-    function render(viewMode, container) {
+    function render(viewMode, hideItemNumber, container) {
         var App = ProformaItemApp.App;
-        ReactDOM.render(React.createElement(App, { viewOnly: viewMode }), container[0]);
+        ReactDOM.render(React.createElement(App, { viewOnly: viewMode, hideItemNumber: hideItemNumber }), container[0]);
     }
     $(document).ready(function () {
         if ($('.proforma_items_app').length != 0) {
-            render(false, $('.proforma_items_app'));
-        }
-        if ($('.proforma_items_show_app').length != 0) {
-            render(true, $('.proforma_items_show_app'));
+            var hide_item_number = $('.proforma_items_app').data('hide_item_number');
+            var view_only = $('.proforma_items_app').data('view_only');
+            render(view_only, hide_item_number, $('.proforma_items_app'));
         }
     });
 })();

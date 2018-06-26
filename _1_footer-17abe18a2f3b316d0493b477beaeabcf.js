@@ -11,33 +11,25 @@ var app = app || {};
                 null,
                 React.createElement(
                     "td",
-                    { className: "grand_total", colSpan: "5" },
+                    { className: "total", colSpan: "7" },
                     React.createElement(
                         "span",
                         null,
                         React.createElement(
                             "b",
                             null,
-                            "Grand Total"
+                            this.props.label,
+                            ":"
                         )
                     )
                 ),
                 React.createElement(
                     "td",
-                    { className: "grand_total" },
+                    { className: "total" },
                     React.createElement(
                         "strong",
                         null,
-                        this.props.grandTotalQty
-                    )
-                ),
-                React.createElement(
-                    "td",
-                    { className: "grand_total", colSpan: "2" },
-                    React.createElement(
-                        "strong",
-                        null,
-                        printCurrency(this.props.grandTotalPrice)
+                        printCurrency(this.props.value)
                     )
                 )
             );

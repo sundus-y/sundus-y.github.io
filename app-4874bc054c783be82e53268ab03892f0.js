@@ -408,6 +408,11 @@ window.globalSearchItemApp = window.globalSearchItemApp || {};
                             React.createElement(
                                 "th",
                                 { width: "9%", rowSpan: "2" },
+                                "Proforma"
+                            ),
+                            React.createElement(
+                                "th",
+                                { width: "9%", rowSpan: "2" },
                                 "Order"
                             ),
                             React.createElement(

@@ -1,0 +1,45 @@
+/* line 4, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+.qty-input {
+  width: 69px !important;
+  text-align: right;
+}
+
+/* line 8, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+.qty-input-show {
+  width: 60px !important;
+  text-align: right;
+}
+
+/* line 12, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+.full-input {
+  width: 100% !important;
+}
+
+/* line 15, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+hr.order {
+  height: 1px !important;
+  background-color: #222222 !important;
+}
+
+/* line 19, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+td > input {
+  width: 100% !important;
+}
+
+/* line 22, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+a.modal-link {
+  color: #337ab7 !important;
+}
+/* line 23, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+a.modal-link a:visited {
+  color: #337ab7 !important;
+}
+/* line 25, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+a.modal-link a:hover {
+  background-color: transparent !important;
+}
+
+/* line 27, /Users/syousuf/code/p/ots/app/assets/stylesheets/order_items.scss */
+tr.new-item {
+  opacity: 0;
+}
