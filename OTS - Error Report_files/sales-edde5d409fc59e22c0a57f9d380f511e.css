@@ -1,0 +1,40 @@
+/* line 4, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+span.line_number {
+  float: right;
+  text-align: right;
+  font-size: 16px;
+}
+
+/* line 9, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+td.grand_total, td.total {
+  text-align: right;
+  font-size: 16px;
+}
+
+/* line 14, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+span.selected-ac-close {
+  cursor: pointer;
+  background-color: #3C3C3C;
+}
+
+/* line 19, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+.returned_sale {
+  color: #ff4f5a;
+}
+
+/* line 23, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+.inventory {
+  display: inline-block;
+}
+
+/* line 27, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+tr.VOID {
+  background-color: #fcffc8 !important;
+}
+
+/* line 31, /Users/syousuf/code/p/ots/app/assets/stylesheets/sales.scss */
+#fs_num_modal {
+  width: 20% !important;
+  margin-top: 4% !important;
+  margin-left: 40% !important;
+}
